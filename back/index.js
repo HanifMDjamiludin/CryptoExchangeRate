@@ -2,9 +2,9 @@ const express = require("express");
 const axios = require("axios");
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
-let api_endpoint = "https://api.n.exchange/en/api/v1/price/BTCLTC/latest/";
+let api_endpoint = "https://api.n.exchange/en/api/v1/price/ETHLTC/latest/";
 
 const router = express.Router();
 

@@ -1,7 +1,6 @@
 {
-  "name": "balldontlie",
+  "name": "back",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,12 +9,13 @@
     "type": "git",
     "url": "git+https://github.com/HanifMDjamiludin/ballDontLie.git"
   },
-  "author": "Hanif Djamiludin",
+  "author": "Hanif",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HanifMDjamiludin/ballDontLie/issues"
   },
   "homepage": "https://github.com/HanifMDjamiludin/ballDontLie#readme",
+  "description": "",
   "dependencies": {
     "express": "^4.19.2"
   }
