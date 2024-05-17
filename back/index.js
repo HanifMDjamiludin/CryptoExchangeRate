@@ -3,14 +3,22 @@ const axios = require("axios");
 
 const app = express();
 const port = 3001;
+const cors = require('cors');
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
-let api_endpoint = "https://api.n.exchange/en/api/v1/price/ETHLTC/latest/";
+
+// let api_endpoint = "https://api.n.exchange/en/api/v1/price/ETHLTC/latest/";
 
 const router = express.Router();
 
-router.get("/one", async (req, res) => {
+app.get("/ETHLTC", async (req, res) => {
   try {
-    const response = await axios.get(api_endpoint);
+    const response = await axios.get("https://api.n.exchange/en/api/v1/price/ETHLTC/latest/");
     res.json(response.data);
   } catch (error) {
     console.error("Error fetching data:", error);
