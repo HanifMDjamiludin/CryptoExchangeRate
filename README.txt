@@ -16,3 +16,6 @@ npm install react-bootstrap bootstrap
 npm start
 To run the frontend locally
 
+Select first and second ticker
+Click Submit button
+
