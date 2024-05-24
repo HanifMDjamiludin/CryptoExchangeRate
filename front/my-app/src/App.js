@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styled from 'styled-components';
 
 
 function App() {
@@ -33,32 +34,69 @@ function App() {
       
     }
   }
-  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="container">
-          <div className="row">
-            <div className='column'>
-            <h1 className="ticker">First Ticker</h1>
+    <Application>
+      <Header>
+        <Container>
+          <Row>
+            <Column>
+            <Ticker>First Ticker</Ticker>
             <Dropdown options={options} onChange={(value) =>{pickFirst(value)}}/>
-            </div>
-            <div className='column'>
+            </Column>
+            <Column>
             <h1>{txt}</h1>
             <h1>{rateVar}</h1>
             <Button variant="primary" onClick={()=>{console.log(test(first.value,second.value))}}>Submit</Button>
-            </div>
-            <div className='column'>
-            <h1 className="ticker">Second Ticker</h1>
+            </Column>
+            <Column>
+            <Ticker>Second Ticker</Ticker>
             <Dropdown options={options} onChange={(value)=>{
               pickSecond(value)
             }}/>
-            </div>
-          </div>
-        </div>
-      </header>
-    </div>
+            </Column>
+          </Row>
+        </Container>
+      </Header>
+    </Application>
   );
 }
+
+const Column = styled.div`
+flex: 0 0 calc(33.33% - 10px);
+margin-right: 10px;
+padding: 10px;
+box-sizing: border-box;
+`
+
+const Application = styled.div`
+text-align: center;
+`
+const Header = styled.div`
+background-color: #758173;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-size: calc(10px + 2vmin);
+color: white;
+`
+
+const Container = styled.div`
+margin: 0 auto;
+max-width: 1200px;
+`
+
+const Row = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between; 
+`
+
+const Ticker = styled.h1`
+margin-right: 30px;
+margin-left: 30px;
+`
 
 export default App;
